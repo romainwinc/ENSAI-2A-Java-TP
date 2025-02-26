@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 public class Password {
     /**
@@ -40,8 +41,13 @@ public class Password {
      */
     public static String bruteForce6Digit(String targetHash) {
 
-        // Code here
-
+        for (int i = 0; i <= 999999; i++) {
+            String mdp = String.format("%06d", i);
+            String hash = hashPassword(mdp);
+            if (hash.equals(targetHash)) {
+                return mdp;
+            }
+        }
         return null;
     }
 
@@ -61,9 +67,29 @@ public class Password {
      */
     public static boolean isStrongPassword(String password) {
 
-        // Code here
+        if (password.length() < 12) {
+            return false;
+        }
 
-        return false;
+        boolean hasUpperCase = false;
+        boolean hasLowerCase = false;
+        boolean hasDigit = false;
+        boolean hasWhitespace = false;
+
+        for (char c : password.toCharArray()) {
+            if (Character.isUpperCase(c)) {
+                hasUpperCase = true;
+            } else if (Character.isLowerCase(c)) {
+                hasLowerCase = true;
+            } else if (Character.isDigit(c)) {
+                hasDigit = true;
+            } else if (Character.isWhitespace(c)) {
+                hasWhitespace = true;
+            }
+        }
+
+        return hasUpperCase && hasLowerCase && hasDigit && !hasWhitespace;
+
     }
 
     /**
@@ -76,7 +102,9 @@ public class Password {
      */
     public static HashMap<String, Boolean> checkPasswordsList(ArrayList<String> passwords) {
 
-        // Code here
+        for (String password : passwords) {
+            System.out.println(password + " : " + (isStrongPassword(password) ? true : false));
+        }
 
         return null;
     }
@@ -95,7 +123,11 @@ public class Password {
      */
     public static String generatePassword(int nbCar) {
 
-        // Code here
+        Random random = new Random();
+        char c = (char) (random.nextInt(26) + 'A');
+        Random random1 = new Random();
+        char c1 = (char) (random1.nextInt(26) + 'a');
+        int n = (int) (Math.random() * 9);
 
         return null;
     }
