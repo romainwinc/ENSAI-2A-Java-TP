@@ -13,5 +13,4 @@ abstract class Item {
         this.pageCount = pageCount;
     }
 
-    public abstract void honk();
 }

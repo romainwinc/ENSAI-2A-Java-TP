@@ -13,24 +13,24 @@ public class Library {
 
     // Atribute
     private String name;
-    private List<Book> books;
+    private List<Item> items;
 
     // Constructor
     public Library(String name) {
         this.name = name;
-        this.books = new ArrayList<>();
+        this.items = new ArrayList<>();
     }
 
-    public void addBook(Book book) {
-        this.books.add(book);
+    public void addItem(Item item) {
+        this.items.add(item);
     }
 
-    public void displayBooks() {
-        if (this.books.size() < 1) {
-            System.out.println("if there is no book");
+    public void displayItems() {
+        if (this.items.size() < 1) {
+            System.out.println("if there is no item");
         } else {
-            for (Book book : this.books) {
-                System.out.println(book);
+            for (Item item : this.items) {
+                System.out.println(item);
             }
         }
     }

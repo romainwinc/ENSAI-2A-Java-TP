@@ -16,7 +16,12 @@ public class Main {
         System.out.println(fellowshipOfTheRing.toString());
 
         Library firstlLibrary = new Library("FirstLibrary");
-        firstlLibrary.loadBooksFromCSV("books.csv");
-        firstlLibrary.displayBooks();
+
+        Magazine firtMagazine = new Magazine("super titre", "2025", "167", 0, 0);
+        Magazine secondMagazine = new Magazine("super titre 2", "2026", "17", 0, 0);
+
+        firstlLibrary.addItem(firtMagazine);
+        firstlLibrary.addItem(secondMagazine);
+        firstlLibrary.displayItems();
     }
 }

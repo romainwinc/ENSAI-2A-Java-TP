@@ -5,11 +5,10 @@ public class Magazine extends Item {
     private String issn;
     private String issueNumber;
 
-    public Magazine(String issn, String issueNumber, String title, int year, int pageCount)
-        //Constructor
+    public Magazine(String issn, String issueNumber, String title, int year, int pageCount) {
+        // Constructor
+        super(title, year, pageCount);
         this.issn = issn;
-        this. issueNumber = issueNumber;
-        super(title);
-        super(year);
-        super(pageCount);
+        this.issueNumber = issueNumber;
+    }
 }
