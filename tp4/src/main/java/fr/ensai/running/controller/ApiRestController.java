@@ -48,7 +48,7 @@ public class ApiRestController {
     }
 
     @DeleteMapping("/athlete/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteAthlete(@PathVariable Long id) {
         Athlete existingAthlete = athleteService.findById(id);
         if (existingAthlete == null) {
             return ResponseEntity.notFound().build();
@@ -56,5 +56,4 @@ public class ApiRestController {
         athleteService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
-
 }
